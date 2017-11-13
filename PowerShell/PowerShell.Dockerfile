@@ -12,6 +12,6 @@ RUN sed '/Subsystem sftp \/usr\/lib\/openssh\/sftp-server/a Subsystem powershell
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 
-EXPOSE 22
+EXPOSE 22/tcp
 CMD [ "/bin/bash" ]
 ENTRYPOINT ["/usr/sbin/sshd", "-D"]
